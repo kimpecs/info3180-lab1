@@ -6,9 +6,6 @@ app = Flask(__name__)
 def home():
     return 'My home page'
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -18,3 +15,7 @@ def about():
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
